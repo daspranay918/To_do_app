@@ -6,22 +6,22 @@ The application uses local storage for task persistence and does not require any
 
 ## Features
 
-* Add new tasks
-* Mark tasks as completed or uncompleted
-* Delete tasks
-* Undo deleted tasks
-* Filter tasks by All, Active, and Completed
-* Optional date and time for tasks
-* Empty state when there are no tasks
-* Responsive layout
-* Subtle UI animations
-* Local task persistence
+- Add new tasks
+- Mark tasks as completed or uncompleted
+- Delete tasks
+- Undo deleted tasks
+- Filter tasks by All, Active, and Completed
+- Optional date and time for tasks
+- Empty state when there are no tasks
+- Responsive layout
+- Subtle UI animations
+- Local task persistence
 
 ## Tech Stack
 
-* Flutter
-* Dart
-* Material 3
+- Flutter
+- Dart
+- Material 3
 
 ## Local Storage
 
@@ -61,13 +61,13 @@ lib/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/daspranay918/To_do_app.git
 ```
 
 ### 2. Open the project
 
 ```bash
-cd to_do_app
+cd To_do_app
 ```
 
 ### 3. Install dependencies
@@ -96,51 +96,62 @@ build/app/outputs/flutter-apk/app-release.apk
 
 ## Flutter Version
 
-* Flutter: **3.41.9**
-* Dart: **3.11.5**
+- Flutter: **3.41.9**
+- Dart: **3.11.5**
 
 ## Packages Used
 
-### shared_preferences
+### `shared_preferences`
 
 Used for simple local persistence of task data so tasks remain available after the application is closed and reopened.
 
-No other third-party packages were used.
+### `flutter_lints`
+
+Used as a development dependency for recommended Flutter and Dart code analysis rules.
 
 ## Short Questions
 
 ### 1. What is the difference between StatelessWidget and StatefulWidget?
 
-A `StatelessWidget` does not maintain mutable state and its UI depends on the values provided to it.
+A `StatelessWidget` is used when the UI does not need to change, such as a `Text` or `Icon`. It does not store changing data.
 
-A `StatefulWidget` has a separate `State` object and can update its UI when its state changes.
+A `StatefulWidget` is used when the UI can change. It has a separate `State` object that stores the changing data.
+
+**Example:** `HomeScreen` in this app is a `StatefulWidget` because tasks can be added, completed, and deleted.
 
 ### 2. What is setState() used for in Flutter?
 
-`setState()` is used inside a `StatefulWidget` to notify Flutter that the state has changed.
+`setState()` tells Flutter that some data has changed and the widget needs to rebuild its UI.
 
-Flutter then rebuilds the widget so the updated state is reflected in the UI.
+**Example:** When a task is completed, `isCompleted` is changed inside `setState()`, so Flutter updates the checkbox and task text.
 
 ### 3. What is the difference between ListView and Column?
 
-`Column` arranges its children vertically but does not provide scrolling by itself.
+A `Column` arranges widgets vertically but does not scroll by itself.
 
-`ListView` is designed for lists and provides scrolling, making it more suitable for displaying a dynamic collection of items.
+A `ListView` is designed for displaying a list of items and provides scrolling. For a large number of tasks, `ListView.builder` can build items efficiently as needed.
 
 ### 4. How would you handle an API call in Flutter?
 
-I would keep API-related logic in a separate service or repository and use a package such as `http` or `dio`.
+I would keep API-related code in a separate service and use a package such as `http` or `dio` to make the request.
 
-I would handle loading, success, and error states before updating the UI.
+I would use `try-catch` to handle API or network errors and manage **loading, success, and error states** so the UI shows the correct result.
 
 ### 5. What is the purpose of pubspec.yaml?
 
-`pubspec.yaml` contains the project's configuration, SDK constraints, dependencies, assets, fonts, and other project metadata.
+`pubspec.yaml` is the main configuration file of a Flutter project.
 
-Flutter uses it to manage packages and resources required by the application.
+It contains project information such as the version, SDK constraints, dependencies, assets, and other configuration. **Example:** `shared_preferences` is added there as a dependency.
 
 ### 6. Which Flutter project or feature have you worked on that you are most proud of, and what was your contribution?
 
-I am most proud of my Eventora event-management application built with Flutter and Supabase.
+I am most proud of my **Eventora** event-management application built with Flutter and Supabase.
 
-I contributed to UI development, authentication, event management, navigation, backend integration, and the overall application structure.
+I worked on the UI, authentication, event management features, navigation, backend integration, and overall project structure.
+
+## Submission
+
+- **GitHub Repository:** https://github.com/daspranay918/To_do_app
+- **APK:** https://drive.google.com/drive/folders/1Mzd4qd5ojMkAbIuCHmXU_qkmi90hf9yO?usp=sharing
+
+The APK is provided in the Google Drive folder for testing.
