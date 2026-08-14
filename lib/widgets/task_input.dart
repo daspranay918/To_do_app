@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/theme/app_colors.dart';
 
 class TaskInput extends StatelessWidget {
-  final VoidCallback onTap;
+  final VoidCallback onTap; // Whoever creates me must give me a function. I'll call that function when I am tapped.
 
   const TaskInput({super.key, required this.onTap});
 
@@ -27,7 +27,7 @@ class TaskInput extends StatelessWidget {
                 blurRadius: 14,
                 offset: const Offset(0, 4),
               ),
-              BoxShadow(
+              BoxShadow(                // two shadows because try to make the sadow more real
                 color: Colors.black.withValues(alpha: 0.025),
                 blurRadius: 3,
                 offset: const Offset(0, 1),

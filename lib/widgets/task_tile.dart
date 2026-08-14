@@ -17,7 +17,7 @@ class TaskTile extends StatelessWidget {
 
   String _formatDateTime(BuildContext context) {
     if (task.dateTime == null) {
-      return '';
+      return '';  // i can simply retun the current date time if its null
     }
 
     final date = task.dateTime!;
@@ -128,7 +128,7 @@ class TaskTile extends StatelessWidget {
                           const SizedBox(width: 4),
                           Flexible(
                             child: Text(
-                              _formatDateTime(context),
+                              _formatDateTime(context), //convert datetime into text
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 fontSize: 10.5,

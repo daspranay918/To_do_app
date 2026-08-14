@@ -6,7 +6,7 @@ import 'app_colors.dart';
 class AppTheme {
   AppTheme._();
 
-  static ThemeData get lightTheme {
+  static ThemeData get lightTheme { // stattic means it blong to the class itself, not an object
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.background,

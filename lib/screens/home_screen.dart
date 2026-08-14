@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _selectFilter(String filter) {
-    if (_selectedFilter == filter) return;
+    if (_selectedFilter == filter) return; // if same no chnage other wise set state
 
     setState(() {
       _selectedFilter = filter;
@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BoxShadow(
             color: AppColors.primary.withValues(alpha: 0.28),
             blurRadius: 16,
-            offset: const Offset(0, 7),
+            // offset: const Offset(0, 7),
           ),
         ],
       ),
@@ -305,6 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildTaskContent(List<TaskModel> tasks) {
+    print('1,$tasks'); // returning instance of task model
     if (tasks.isEmpty) {
       return EmptyTaskView(
         key: ValueKey('empty-$_selectedFilter'),
